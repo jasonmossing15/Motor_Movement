@@ -11,13 +11,15 @@
 
 void initializePWM();
 
-void moveLeftMotorForward();
+void smallLeftTurn();
 
-void moveRightMotorForward();
+void smallRightTurn();
 
-void stopLeftMotor();
+void largeLeftTurn();
 
-void stopRightMotor();
+void largeRightTurn();
+
+void moveForward();
 
 void moveMotorsBackward();
 
