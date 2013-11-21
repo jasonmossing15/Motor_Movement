@@ -56,12 +56,12 @@ void initializePWM(){
 }
 
 void moveLeftMotorForward(){
-	TA0CCR1 = 58;
+	TA0CCR1 = 60;
 	TA1CCR2 = 0;
 }
 
 void moveRightMotorForward(){
-	TA1CCR1 = 58;
+	TA1CCR1 = 60;
 	TA1CCR2 = 0;
 }
 
@@ -78,7 +78,7 @@ void stopRightMotor(){
 void moveMotorsBackward(){
 	stopLeftMotor();
 	stopRightMotor();
-	TA1CCR2 = 58;
+	TA1CCR2 = 60;
 }
 void smallLeftTurn(){
 	stopLeftMotor();
