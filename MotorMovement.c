@@ -17,17 +17,25 @@ void stopRightMotor();
 
 
 void initializePWM(){
+	//initialize the outputs for the capture
 	P1DIR |= BIT2;
 	P1SEL |= BIT2;
-	P2DIR |= BIT1|BIT4|BIT5;
-	P2SEL |= BIT1|BIT4|BIT5;
+	P2DIR |= BIT1;
+	P2DIR |= BIT4;
+	P2DIR |= BIT5;
+	P2SEL |= BIT1;
+	P2SEL |= BIT4;
+	P2SEL |= BIT5;
 
+	//stop the timers
 	TA0CTL &= ~(MC1|MC0);
 	TA1CTL &= ~(MC1|MC0);
 
+	//clear the timers
 	TA0CTL |= TACLR;
 	TA1CTL |= TACLR;
 
+	//configure for SMCLK
 	TA0CTL |= TASSEL1;
 	TA1CTL |= TASSEL1;
 
@@ -37,11 +45,12 @@ void initializePWM(){
 	TA1CCR1 = 0;  //FRONT RIGHT TA1.1
 	TA1CCR2 = 0;  //BACK WHEELS	TA1.2
 
+	//set output to Reset/Set
 	TA0CCTL1 |= OUTMOD_7;
 	TA1CCTL1 |= OUTMOD_7;
 	TA1CCTL2 |= OUTMOD_7;
 
-
+	//Start the timers
 	TA0CTL |= MC0;
 	TA1CTL |= MC0;
 }
