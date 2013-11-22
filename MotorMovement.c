@@ -109,3 +109,8 @@ void moveForward(){
 	moveLeftMotorForward();
 	moveRightMotorForward();
 }
+
+void stopMotors(){
+	stopLeftMotor();
+	stopRightMotor();
+}

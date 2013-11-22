@@ -23,5 +23,6 @@ void moveForward();
 
 void moveMotorsBackward();
 
+void stopMotors();
 
 #endif /* MOTORMOVEMENT_H_ */
